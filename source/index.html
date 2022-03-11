@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название проекта</title>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body class="page-body">
+    <main class="container">
+        <form method="POST" actiom=".">
+            <header class="header">
+                <label class="form-block form-block--search">
+                    <input type="text middle-text" placeholder="Введите ЖК / корпус / № квартиры / № паркинга" />
+                </label>
+
+                <div class="custom-select">
+                    <input type="hidden" />
+                    <div class="custom-select__input">
+                        <p class="custom-select__input-text middle-text">Все статусы</p>
+                        <img class="custom-select__input-img" src="../img/arrow.svg" alt="arrow" />
+                    </div>
+                    <ul class="custom-select__list">
+                        <li class="custom-select__item">
+                            <input class="hidden custom-input" type="checkbox" id="1" />
+                            <label class="middle-text custom-label" for="1">Забронировано</label>
+                        </li>
+                        <li class="custom-select__item">
+                            <input class="hidden custom-input" type="checkbox" id="2" />
+                            <label class="middle-text custom-label" for="2">Продано</label>
+                        </li>
+                        <li class="custom-select__item">
+                            <input class="hidden custom-input" type="checkbox" id="3" />
+                            <label class="middle-text custom-label" for="3">Активно</label>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="button button--clear">Очистить корзину</button>
+            </header>
+
+            <footer class="footer">
+              <div class="block-checkbox">
+                  <input class="hidden custom-input" type="checkbox" id="all" />
+                  <label for="all" class="small-text custom-label">все</label>
+              </div>
+
+              <button class="button button--save small-text">Сохранить</button>
+
+              <button class="button button--send small-text">Отправить</button>
+
+              <button class="button button--delete small-text">Удалить</button>
+            </footer>
+        </form>
+        <section class="content">
+            <article class="card">
+                <div class="card-checkbox">
+                    <input class="hidden custom-input" id="card-1" type="checkbox" />
+                    <label class="custom-label" for="card-1"></label>
+                </div>
+
+                <header class="card-header">
+                    <p class="card-header__price">7 733 300 руб.</p>
+                    <div class="card-header__type card-header__type--flat micro-text">
+                      <p>Квартира</p>
+                      <div class="tooltip small-text">Большая и светлая</div>
+                    </div>
+                    <div class="card-label card-label--red">
+                        <span class="card-label__circle"></span>
+                        <p class="middle-text">Уступка от юр.лица</p>
+                    </div>
+                </header>
+                <h2 class="card-name text">Чистое Небо,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
+                <div class="card-content">
+                    <div class="flat-description">
+                        <div class="table">
+                            <div class="table-left">
+                                <p>кв. 62</p>
+                                <p>1 комн. кв.</p>
+                            </div>
+                            <div class="table-right">
+                              <p>234.38 м²</p>
+                              <p>7 этаж</p>
+                            </div>
+                        </div>
+                        <p class="flat-address text">Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
+                    </div>
+
+                    <div class="info">
+                        <img src="../img/flat-image.png" alt="flat image" />
+                        <span class="info-text small-text">Добавлено 21/11/2020</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-checkbox">
+                    <input class="hidden custom-input" id="card-2" type="checkbox" />
+                    <label class="custom-label" for="card-2"></label>
+                </div>
+
+                <header class="card-header">
+                    <p class="card-header__price">7 733 300 руб.</p>
+                    <div class="card-header__type card-header__type--flat micro-text">
+                      <p>Квартира</p>
+                      <div class="tooltip small-text">Большая и светлая</div>
+                    </div>
+                    <div class="card-label card-label--blue">
+                        <span class="card-label__circle"></span>
+                        <p class="middle-text">Уступка от физ.лица</p>
+                    </div>
+                </header>
+                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
+                <div class="card-content">
+                    <div class="flat-description">
+                      <div class="table">
+                          <div class="table-left">
+                              <p>кв. 62</p>
+                              <p>1 комн. кв.</p>
+                          </div>
+                          <div class="table-right">
+                            <p>234.38 м²</p>
+                            <p>7 этаж</p>
+                          </div>
+                      </div>
+                        <p class="flat-address text">Комендантский пр., уч. 1 Каменка</p>
+                    </div>
+
+                    <div class="info">
+                        <img src="../img/flat-image.png" alt="flat image" />
+                        <span class="info-text small-text">Добавлено 21/11/2020</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-checkbox">
+                    <input class="hidden custom-input" id="card-3" type="checkbox" />
+                    <label class="custom-label" for="card-3"></label>
+                </div>
+
+                <header class="card-header">
+                    <p class="card-header__price">800 300 руб.</p>
+                    <div class="card-header__type card-header__type--parking micro-text">
+                      <p>Паркинг</p>
+                      <div class="tooltip small-text">Подземная встроенно-пристроенная</div>
+                    </div>
+                    <div class="card-label">
+                        <span class="card-label__circle"></span>
+                        <p class="middle-text">Забронировано</p>
+                    </div>
+                </header>
+                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
+                <div class="card-content">
+                    <div class="flat-description">
+                        <div class="table">
+                            <div class="table-left">
+                                <p>№ 7-10-2 (ПИБ №68)</p>
+                            </div>
+                            <div class="table-right">
+                              <p>15 м²</p>
+                            </div>
+                        </div>
+                        <p class="flat-address text">Ленинградская область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
+                    </div>
+
+                    <div class="info">
+                        <img src="../img/flat-image.png" alt="flat image" />
+                        <span class="info-text small-text">Добавлено 21/11/2020</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-checkbox">
+                    <input class="hidden custom-input" id="card-4" type="checkbox" />
+                    <label class="custom-label" for="card-4"></label>
+                </div>
+
+                <header class="card-header">
+                    <p class="card-header__price">800 300 руб.</p>
+                    <div class="card-header__type card-header__type--parking micro-text">
+                      <p>Паркинг</p>
+                      <div class="tooltip small-text">Подземная встроенно-пристроенная</div>
+                    </div>
+                    <div class="card-label card-label--disabled">
+                        <span class="card-label__circle"></span>
+                        <p class="middle-text">Продано</p>
+                    </div>
+                </header>
+                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
+                <div class="card-content">
+                    <div class="flat-description">
+                        <div class="table">
+                            <div class="table-left">
+                                <p>№ 7-10-2 (ПИБ №68)</p>
+                            </div>
+                            <div class="table-right">
+                              <p>15 м²</p>
+                            </div>
+                        </div>
+                        <p class="flat-address text">Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
+                    </div>
+
+                    <div class="info">
+                        <img src="../img/flat-image.png" alt="flat image" />
+                        <span class="info-text small-text">Добавлено 21/11/2020</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="js/main.bundle.js"></script>
+  </body>
+
+</html>
