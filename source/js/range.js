@@ -2,6 +2,7 @@ import { getDataFiltered, inactiveApp, activateApp, filter, loader } from './res
 import { updateValue } from './utils';
 
 const wrapper = document.querySelector('.results-list');
+const showMore = document.querySelector('.show-more')
 export let priceSettings = {};
 export let squareSettings = {};
 
@@ -19,7 +20,7 @@ export const initRangePlugin = () => {
       localStorage.setItem('price', JSON.stringify(data));
 
       wrapper.innerHTML = '';
-      inactiveApp(filter, loader);
+      inactiveApp(filter, loader, showMore);
 
       updateValue(price, 'от', '.irs-from');
       updateValue(price, 'до', '.irs-to');
@@ -43,7 +44,7 @@ export const initRangePlugin = () => {
       localStorage.setItem('square', JSON.stringify(data));
 
       wrapper.innerHTML = '';
-      inactiveApp(filter, loader);
+      inactiveApp(filter, loader, showMore);
 
       updateValue(square, 'от', '.irs-from');
       updateValue(square, 'до', '.irs-to');

@@ -11,13 +11,13 @@ export const loader = document.querySelector('.lds-ring');
 export const filter = document.querySelector('.filter');
 
 export const initResults = (roomCount) => {
-  inactiveApp(filter, loader);
+  const showMore = document.querySelector('.show-more');
+  inactiveApp(filter, loader, showMore);
 
   let roomList = []; 
-  const showMore = document.querySelector('.show-more');
+  
   const scrollTo = document.querySelector('.scroll-to');
   scrollTo.classList.add('hidden');
-  showMore.classList.add('hidden');
   showMore.removeEventListener('click', initShowMore);
 
   const wrapper = document.querySelector('.results-list');
@@ -44,9 +44,10 @@ export const initResults = (roomCount) => {
     });
 };
 
-export const inactiveApp = (filter, loader) => {
+export const inactiveApp = (filter, loader, showMore) => {
   filter.classList.add('filter--disabled');
   loader.classList.remove('hidden');
+  showMore.classList.add('hidden');
 };
 
 export const activateApp = (filter, loader) => {
