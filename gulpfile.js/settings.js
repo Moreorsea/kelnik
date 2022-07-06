@@ -14,7 +14,7 @@ module.exports = {
         content: `${source}img/content/`
       },
       fonts: `${source}fonts/`,
-      plugins: `${source}js/plugins/`
+      plugins: `${source}plugins/`
     },
     desination: {
       root: desination,
