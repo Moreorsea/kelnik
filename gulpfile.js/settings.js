@@ -13,7 +13,8 @@ module.exports = {
         icons: `${source}img/icons/`,
         content: `${source}img/content/`
       },
-      fonts: `${source}fonts/`
+      fonts: `${source}fonts/`,
+      plugins: `${source}js/plugins/`
     },
     desination: {
       root: desination,
@@ -23,7 +24,8 @@ module.exports = {
         all: `${desination}img/`,
         content: `${desination}img/content/`
       },
-      fonts: `${desination}fonts/`
+      fonts: `${desination}fonts/`,
+      plugins: `${desination}plugins/`
     },
     dist: './dist'
   }

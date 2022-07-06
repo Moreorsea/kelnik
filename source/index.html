@@ -3,215 +3,102 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>Название проекта</title>
+    <link rel="stylesheet" href="css/plugins/ion.rangeSlider.min.css">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
 
-  <body class="page-body">
-    <main class="container">
-        <form method="POST" actiom=".">
-            <header class="header">
-                <label class="form-block form-block--search">
-                    <input type="text middle-text" placeholder="Введите ЖК / корпус / № квартиры / № паркинга" />
-                </label>
-
-                <div class="custom-select">
-                    <input type="hidden" />
-                    <div class="custom-select__input">
-                        <p class="custom-select__input-text middle-text">Все статусы</p>
-                        <img class="custom-select__input-img" src="../img/arrow.svg" alt="arrow" />
-                    </div>
-                    <ul class="custom-select__list">
-                        <li class="custom-select__item">
-                            <input class="hidden custom-input" type="checkbox" id="1" />
-                            <label class="middle-text custom-label" for="1">Забронировано</label>
-                        </li>
-                        <li class="custom-select__item">
-                            <input class="hidden custom-input" type="checkbox" id="2" />
-                            <label class="middle-text custom-label" for="2">Продано</label>
-                        </li>
-                        <li class="custom-select__item">
-                            <input class="hidden custom-input" type="checkbox" id="3" />
-                            <label class="middle-text custom-label" for="3">Активно</label>
-                        </li>
-                    </ul>
+  <body class="page-results">
+    <section class="results">
+        <h1>Квартиры</h1>
+        <header class="results-header">
+            <div class="sort sort--desc">
+                <span>Планировка</span>
+            </div>
+            <div class="sort sort--desc">
+                <span>Квартира</span>
+            </div>
+            <div class="sort">
+                <span class="sort__name">S, м²</span>
+                <div class="sort__control">
+                    <span class="sort__control-top"></span>
+                    <span class="sort__control-bottom"></span>
                 </div>
+            </div>
 
-                <button class="button button--clear">Очистить корзину</button>
-            </header>
-
-            <footer class="footer">
-              <div class="block-checkbox">
-                  <input class="hidden custom-input" type="checkbox" id="all" />
-                  <label for="all" class="small-text custom-label">все</label>
-              </div>
-
-              <button class="button button--save small-text">Сохранить</button>
-
-              <button class="button button--send small-text">Отправить</button>
-
-              <button class="button button--delete small-text">Удалить</button>
-            </footer>
-        </form>
-        <section class="content">
-            <article class="card">
-                <div class="card-checkbox">
-                    <input class="hidden custom-input" id="card-1" type="checkbox" />
-                    <label class="custom-label" for="card-1"></label>
+            <div class="sort range-block">
+                <span class="sort__name">Этаж</span>
+                <div class="sort__control">
+                    <span class="sort__control-top"></span>
+                    <span class="sort__control-bottom"></span>
                 </div>
+            </div>
 
-                <header class="card-header">
-                    <p class="card-header__price">7 733 300 руб.</p>
-                    <div class="card-header__type card-header__type--flat micro-text">
-                      <p>Квартира</p>
-                      <div class="tooltip small-text">Большая и светлая</div>
-                    </div>
-                    <div class="card-label card-label--red">
-                        <span class="card-label__circle"></span>
-                        <p class="middle-text">Уступка от юр.лица</p>
-                    </div>
-                </header>
-                <h2 class="card-name text">Чистое Небо,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
-                <div class="card-content">
-                    <div class="flat-description">
-                        <div class="table">
-                            <div class="table-left">
-                                <p>кв. 62</p>
-                                <p>1 комн. кв.</p>
-                            </div>
-                            <div class="table-right">
-                              <p>234.38 м²</p>
-                              <p>7 этаж</p>
-                            </div>
-                        </div>
-                        <p class="flat-address text">Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
-                    </div>
+            <div class="sort range-block">
+                <span class="green-text sort__name">Цена, ₽</span>
+                <div class="sort__control">
+                    <span class="sort__control-top"></span>
+                    <span class="sort__control-bottom"></span>
+                </div>
+            </div>
+        </header>
+        <div class="results-list"></div>
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <button class="show-more hidden text-bold" type="button">Загрузить еще</button>
+    </section>
+    <aside class="filter">
+        <ul class="room-list">
+            <li class="room-list__item" id="1%D0%BA">1к</li>
+            <li class="room-list__item" id="2%D0%BA">2к</li>
+            <li class="room-list__item room-list__item--selected" id="3%D0%BA">3к</li>
+            <li class="room-list__item room-list__item--disabled" id="4%D0%BA">4к</li>
+        </ul>
+        <div class="price">
+            <span class="filter__title text-medium">Стоимость квартиры, ₽</span>
+            <input id="price" type="text" />
+        </div>
+        <div class="square">
+            <span class="filter__title">Площадь, м²</span>
+            <input id="square" type="text" />
+        </div>
+        <div class="clear">
+            <span class="filter__title">Сбросить параметры</span>
+            <img class="clear__icon" src="../img/clear.svg" alt="clear-icon" />
+        </div>
+    </aside>
 
-                    <div class="info">
-                        <img src="../img/flat-image.png" alt="flat image" />
-                        <span class="info-text small-text">Добавлено 21/11/2020</span>
+    <script type="text/x-tmpl" id="result-card">
+        <div class="block" data-id="[%=o.id%]">
+            <div class="block__wrapper">
+                <p class="block__title text-bold">[%=o.name%]</p>
+                <div class="results-list__data">
+                    <div class="text-bold">[%=o.square%] 
+                        <span class="results-list__data-square">м²</span>
+                    </div>
+                    <div>
+                        <span class="text-bold">[%=o.floor%]</span> из 17 
+                        <span class="results-list__data-floor">этаж</span>
+                    </div>
+                    <div class="text-bold">
+                        <span class="results-list__data-price">[%=o.price%]</span> 
+                        <span class="results-list__data-currency">₽</span>
                     </div>
                 </div>
-            </article>
+                <img class="block__image block__image--desc" src="[%=o.image%]" alt="[%=o.name%]" />
+            </div>
+            <img class="block__image block__image--tablet" src="[%=o.image%]" alt="[%=o.name%]" />
+        </div>
+    </script>
 
-            <article class="card">
-                <div class="card-checkbox">
-                    <input class="hidden custom-input" id="card-2" type="checkbox" />
-                    <label class="custom-label" for="card-2"></label>
-                </div>
-
-                <header class="card-header">
-                    <p class="card-header__price">7 733 300 руб.</p>
-                    <div class="card-header__type card-header__type--flat micro-text">
-                      <p>Квартира</p>
-                      <div class="tooltip small-text">Большая и светлая</div>
-                    </div>
-                    <div class="card-label card-label--blue">
-                        <span class="card-label__circle"></span>
-                        <p class="middle-text">Уступка от физ.лица</p>
-                    </div>
-                </header>
-                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
-                <div class="card-content">
-                    <div class="flat-description">
-                      <div class="table">
-                          <div class="table-left">
-                              <p>кв. 62</p>
-                              <p>1 комн. кв.</p>
-                          </div>
-                          <div class="table-right">
-                            <p>234.38 м²</p>
-                            <p>7 этаж</p>
-                          </div>
-                      </div>
-                        <p class="flat-address text">Комендантский пр., уч. 1 Каменка</p>
-                    </div>
-
-                    <div class="info">
-                        <img src="../img/flat-image.png" alt="flat image" />
-                        <span class="info-text small-text">Добавлено 21/11/2020</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-checkbox">
-                    <input class="hidden custom-input" id="card-3" type="checkbox" />
-                    <label class="custom-label" for="card-3"></label>
-                </div>
-
-                <header class="card-header">
-                    <p class="card-header__price">800 300 руб.</p>
-                    <div class="card-header__type card-header__type--parking micro-text">
-                      <p>Паркинг</p>
-                      <div class="tooltip small-text">Подземная встроенно-пристроенная</div>
-                    </div>
-                    <div class="card-label">
-                        <span class="card-label__circle"></span>
-                        <p class="middle-text">Забронировано</p>
-                    </div>
-                </header>
-                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
-                <div class="card-content">
-                    <div class="flat-description">
-                        <div class="table">
-                            <div class="table-left">
-                                <p>№ 7-10-2 (ПИБ №68)</p>
-                            </div>
-                            <div class="table-right">
-                              <p>15 м²</p>
-                            </div>
-                        </div>
-                        <p class="flat-address text">Ленинградская область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
-                    </div>
-
-                    <div class="info">
-                        <img src="../img/flat-image.png" alt="flat image" />
-                        <span class="info-text small-text">Добавлено 21/11/2020</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-checkbox">
-                    <input class="hidden custom-input" id="card-4" type="checkbox" />
-                    <label class="custom-label" for="card-4"></label>
-                </div>
-
-                <header class="card-header">
-                    <p class="card-header__price">800 300 руб.</p>
-                    <div class="card-header__type card-header__type--parking micro-text">
-                      <p>Паркинг</p>
-                      <div class="tooltip small-text">Подземная встроенно-пристроенная</div>
-                    </div>
-                    <div class="card-label card-label--disabled">
-                        <span class="card-label__circle"></span>
-                        <p class="middle-text">Продано</p>
-                    </div>
-                </header>
-                <h2 class="card-name text">Зеленый квартал на Пулковских высотах,&nbsp;<span>корпус 10, III кв. 2022 г.</span></h2>
-                <div class="card-content">
-                    <div class="flat-description">
-                        <div class="table">
-                            <div class="table-left">
-                                <p>№ 7-10-2 (ПИБ №68)</p>
-                            </div>
-                            <div class="table-right">
-                              <p>15 м²</p>
-                            </div>
-                        </div>
-                        <p class="flat-address text">Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1</p>
-                    </div>
-
-                    <div class="info">
-                        <img src="../img/flat-image.png" alt="flat image" />
-                        <span class="info-text small-text">Добавлено 21/11/2020</span>
-                    </div>
-                </div>
-            </article>
-        </section>
-    </main>
+    <button class="scroll-to" type="text"></button>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/plugins/ion.rangeSlider.min.js"></script>
     <script src="js/main.bundle.js"></script>
   </body>
 

@@ -1,0 +1,84 @@
+.results-header {
+  display: flex;
+  margin: 0 0 10px;
+
+  @media(min-width: 1440px) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+    padding: 0 0 10px;
+  }
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+
+  @media(min-width: 1440px) {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+.sort:first-child {
+  @media(min-width: 1440px) {
+    width: 13%;
+  }
+}
+
+.sort:nth-child(2) {
+  @media(min-width: 1440px) {
+    width: 39%;
+  }
+}
+
+.sort:nth-child(3) {
+  @media(min-width: 1440px) {
+    width: 18.5%;
+  }
+}
+
+.sort:nth-child(4) {
+  @media(min-width: 1440px) {
+    width: 18%;
+  }
+}
+
+.sort__control {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort__name {
+  display: block;
+  margin: 0 7.5px 0 0;
+}
+
+.sort__control-top {
+  display: block;
+  width: 7px;
+  height: 4px;
+  background: url("../img/sort-top.svg") no-repeat center;
+  background-size: contain;
+  margin: 0 0 3px;
+  cursor: pointer;
+}
+
+.sort__control-bottom {
+  display: block;
+  width: 7px;
+  height: 4px;
+  background: url("../img/sort-bottom.svg") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.sort--desc {
+  display: none;
+
+  @media(min-width: 1440px) {
+    display: block;
+  }
+}

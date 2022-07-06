@@ -55,7 +55,10 @@
     "webpack": "5.20.2",
     "webpack-stream": "6.1.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.27.2",
+    "blueimp-tmpl": "^3.20.0"
+  },
   "browserslist": [
     "last 2 versions",
     "not dead",

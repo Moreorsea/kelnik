@@ -1,11 +1,14 @@
-function initSelect() {
-  let allSelects = document.querySelectorAll('.custom-select__input');
-  allSelects.forEach((item) => {
-    item.addEventListener('click', e => {
-      let parent = e.currentTarget.parentNode;
-      parent.classList.toggle('show');
-    });
-  });
-}
+import { initRangePlugin } from './range';
+import { initFilter } from './filter';
+import { initResults } from './results';
+import { initScollTo } from './scrollTo';
+import { initClearFilter } from './clearFilter';
 
-initSelect();
+document.addEventListener('DOMContentLoaded', function() {
+  initRangePlugin();
+  initFilter();
+  initResults('3%D0%BA');
+  initScollTo();
+  initClearFilter();
+});
+

@@ -1,34 +1,105 @@
 body {
-  font-family: "PT Sans";
+  font-family: "PT Root UI Regular";
   font-size: 14px;
-  line-height: 21px;
-}
-
-.micro-text {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.small-text {
-  font-size: 13px;
   line-height: 20px;
+
+  @media(min-width: 1440px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
-.middle-text {
-  font-size: 14px;
-  line-height: 18px;
+h1 {
+  font-size: 54px;
+  line-height: 55px;
+  margin: 0 0 33px;
+  font-family: "PT Root UI Medium";
+
+  @media(min-width: 1440px) {
+    margin: 0 0 47px;
+  }
 }
 
-.text {
-  font-size: 14px;
-  line-height: 21px;
-}
-
-p, h2 {
+p,
+h2 {
   margin: 0;
   padding: 0;
 }
 
 .hidden {
   display: none;
+}
+
+.green-text {
+  color: @green;
+
+  @media(min-width: 1440px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.grey-text {
+  color: @light-grey;
+}
+
+.text-bold {
+  font-family: "PT Root UI Bold";
+}
+
+.text-medium {
+  font-family: "PT Root UI Medium";
+}
+
+.middle-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.attention {
+  margin-top: 50px;
+}
+
+.page-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 853px;
+  margin: 48px auto 60px;
+
+  @media(min-width: 1440px) {
+    max-width: 1280px;
+    margin: 97px auto 60px;
+  }
+}
+
+.show-more {
+  border: 1px solid rgba(11, 23, 57, 0.2);
+  border-radius: 25px;
+  padding: 7px 23px;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  font-size: 15px;
+  line-height: 22px;
+  margin: 18px 0 0;
+  cursor: pointer;
+
+  @media(min-width: 1440px) {
+    margin: 40px 0 0;
+    padding: 9px 25px 7px;
+  }
+}
+
+.scroll-to {
+  position: fixed;
+  border: none;
+  outline: none;
+  background: url("../img/scroll-to.svg") no-repeat center;
+  background-size: contain;
+  bottom: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
