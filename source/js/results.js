@@ -63,6 +63,11 @@ export const renderList = (wrapper, list) => {
   wrapper.append(fragment);
 };
 
+export const renderAttention = (wrapper, {}) => {
+  const wrapElements = createElementFromHTML(tmpl('empty-query', {}));
+  wrapper.append(wrapElements);
+};
+
 export const initShowMore = () => {
   const filteredCards = JSON.parse(localStorage.getItem('filteredCards'));
   const blocks = document.querySelectorAll('.block');
@@ -94,5 +99,9 @@ export const getDataFiltered = () => {
   
   arr.length > 5 ? showMore.classList.remove('hidden') : showMore.classList.add('hidden');
   localStorage.setItem('filteredCards', JSON.stringify(arr));
-  renderList(wrapper, arr.splice(0, 5));
+  if(!arr.length) {
+    renderAttention(wrapper, {});
+  } else {
+    renderList(wrapper, arr.splice(0, 5));
+  }
 };
