@@ -17,12 +17,13 @@ export const initResults = (roomCount) => {
   const showMore = document.querySelector('.show-more');
   showMore.classList.add('hidden');
   showMore.removeEventListener('click', initShowMore);
+
   const wrapper = document.querySelector('.results-list');
   wrapper.innerHTML = '';
 
   axios.get(`https://dselyanina.pythonanywhere.com/api/flat-list/?count_room=${roomCount}&format=json`)
     .then(res => {
-      resetFilter()
+      resetFilter();
       allCards = res.data.results;
       filteredCards = res.data.results;
       localStorage.setItem('allCards', JSON.stringify(allCards));
@@ -36,19 +37,19 @@ export const initResults = (roomCount) => {
         }
         renderList(wrapper, roomList);
         activateApp(filter, loader);
-      }, 2000)
-    })
-}
+      }, 2000);
+    });
+};
 
 export const inactiveApp = (filter, loader) => {
   filter.classList.add('filter--disabled');
   loader.classList.remove('hidden');
-}
+};
 
 export const activateApp = (filter, loader) => {
   filter.classList.remove('filter--disabled');
   loader.classList.add('hidden');
-}
+};
 
 export const renderList = (wrapper, list) => {
   const fragment = document.createDocumentFragment();
@@ -57,13 +58,13 @@ export const renderList = (wrapper, list) => {
     fragment.append(wrapElements);
   });
   wrapper.append(fragment);
-}
+};
 
 export const initShowMore = () => {
-  const filteredCards = JSON.parse(localStorage.getItem('filteredCards'))
+  const filteredCards = JSON.parse(localStorage.getItem('filteredCards'));
   const blocks = document.querySelectorAll('.block');
   const wrapper = document.querySelector('.results-list');
-  const showMore = document.querySelector('.show-more')
+  const showMore = document.querySelector('.show-more');
   
   let roomList = filteredCards.splice(blocks.length, 5);
 
@@ -71,7 +72,7 @@ export const initShowMore = () => {
   if(filteredCards.length === blocks.length) {
     showMore.classList.add('hidden');
   }
-}
+};
 
 export const getDataFiltered = () => {
   const wrapper = document.querySelector('.results-list');
@@ -91,4 +92,4 @@ export const getDataFiltered = () => {
   arr.length > 5 ? showMore.classList.remove('hidden') : showMore.classList.add('hidden');
   localStorage.setItem('filteredCards', JSON.stringify(arr));
   renderList(wrapper, arr.splice(0, 5));
-}
+};

@@ -15,5 +15,5 @@ function clearFilter(list) {
   list.forEach(item => {
     item.classList.remove('room-list__item--selected');
   });
-};
+}
 

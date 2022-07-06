@@ -3,7 +3,7 @@ export const createElementFromHTML = (htmlString) => {
   div.innerHTML = htmlString.trim();
 
   return div.firstChild;
-}
+};
 
 export const resetFilter = () => {
   const priceFilter = $('#price').data('ionRangeSlider');
@@ -13,7 +13,7 @@ export const resetFilter = () => {
 
   updateValue(document, 'от', '.irs-from');
   updateValue(document, 'до', '.irs-to');
-}
+};
 
 export const updateValue = (wrapper, text, selector) => {
   const elements = wrapper.querySelectorAll(selector);
@@ -22,8 +22,8 @@ export const updateValue = (wrapper, text, selector) => {
     const span = `<span class="grey-text">${text}</span>`;
     const itemText = item.innerHTML;
     item.innerHTML = `${span} <span class="text-bold middle-text">${itemText}</span>`;
-  })
-}
+  });
+};
 
 export const createFilterConfig = (price, square) => {
   let config = {};
@@ -44,4 +44,4 @@ export const createFilterConfig = (price, square) => {
   }
 
   return config;
-}
+};

@@ -25,8 +25,8 @@ export const initRangePlugin = () => {
       updateValue(price, 'до', '.irs-to');
       setTimeout(() => {
         getDataFiltered();
-        activateApp(filter, loader)
-      }, 2000)
+        activateApp(filter, loader);
+      }, 2000);
     }
   });
 
@@ -50,8 +50,8 @@ export const initRangePlugin = () => {
       updateValue(square, 'до', '.irs-to');
       setTimeout(() => {
         getDataFiltered(data);
-        activateApp(filter, loader)
-      }, 2000)
+        activateApp(filter, loader);
+      }, 2000);
     }
   });
 
