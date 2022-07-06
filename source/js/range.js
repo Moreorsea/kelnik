@@ -45,7 +45,6 @@ export const initRangePlugin = () => {
       wrapper.innerHTML = '';
       inactiveApp(filter, loader);
 
-      // getDataSquare(data);
       updateValue(square, 'от', '.irs-from');
       updateValue(square, 'до', '.irs-to');
       setTimeout(() => {
