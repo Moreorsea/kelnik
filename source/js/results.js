@@ -15,6 +15,8 @@ export const initResults = (roomCount) => {
 
   let roomList = []; 
   const showMore = document.querySelector('.show-more');
+  const scrollTo = document.querySelector('.scroll-to');
+  scrollTo.classList.add('hidden');
   showMore.classList.add('hidden');
   showMore.removeEventListener('click', initShowMore);
 
@@ -34,6 +36,7 @@ export const initResults = (roomCount) => {
       setTimeout(() => {
         if(allCards.length > 5) {
           showMore.classList.remove('hidden');
+          scrollTo.classList.remove('hidden');
         }
         renderList(wrapper, roomList);
         activateApp(filter, loader);
